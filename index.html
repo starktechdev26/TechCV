@@ -20,8 +20,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
-      gap: 40px; /* Space between pages on screen */
+      padding: 30px 20px;
+      gap: 30px; /* Space between pages on screen */
       color: #000;
     }
 
@@ -31,27 +31,24 @@
     }
 
     /* =========================================
-       A4 PAGE SETUP (ATS-Friendly)
+       A4 PAGE SETUP (Screen View)
     ========================================= */
     .resume-a4 {
       width: 210mm;
-      height: 297mm; /* Strict A4 Height */
+      min-height: 297mm; /* Allows flexbox to push footer down */
       background-color: #fff;
-      padding: 20mm 15mm; /* 1-inch margins */
+      padding: 15mm 18mm; 
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      position: relative;
       display: flex;
       flex-direction: column;
     }
 
     .page-indicator {
-      position: absolute;
-      bottom: 15mm;
-      left: 0;
-      right: 0;
+      margin-top: auto; /* Pushes to the bottom naturally without absolute positioning */
       text-align: center;
       font-size: 8.5pt;
       color: #666;
+      padding-top: 15px;
     }
 
     /* =========================================
@@ -59,14 +56,14 @@
     ========================================= */
     header {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     h1 {
       color: #1f4e79; 
       font-size: 24pt;
       font-weight: normal;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       text-transform: capitalize;
     }
 
@@ -89,8 +86,8 @@
       font-size: 9.5pt;
       color: #666;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
     }
 
     /* =========================================
@@ -98,26 +95,26 @@
     ========================================= */
     .section-title {
       color: #1f4e79;
-      font-size: 12pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1.5px solid #1f4e79;
-      padding-bottom: 3px;
-      margin-top: 18px;
-      margin-bottom: 10px;
+      padding-bottom: 2px;
+      margin-top: 14px;
+      margin-bottom: 8px;
     }
 
     /* =========================================
        BODY CONTENT
     ========================================= */
     p, li {
-      font-size: 10pt;
-      line-height: 1.5;
+      font-size: 9.5pt;
+      line-height: 1.45;
     }
 
     .summary {
       text-align: justify;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     .entry-header {
@@ -125,8 +122,8 @@
       justify-content: space-between;
       align-items: baseline;
       font-weight: bold;
-      font-size: 10.5pt;
-      margin-top: 10px;
+      font-size: 10pt;
+      margin-top: 8px;
     }
 
     .entry-subtitle {
@@ -134,18 +131,18 @@
       justify-content: space-between;
       align-items: baseline;
       font-style: italic;
-      font-size: 10pt;
-      margin-bottom: 6px;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
     }
 
     ul.bullet-list {
-      padding-left: 20px;
-      margin-top: 4px;
-      margin-bottom: 10px;
+      padding-left: 18px;
+      margin-top: 3px;
+      margin-bottom: 8px;
     }
 
     ul.bullet-list li {
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     /* =========================================
@@ -153,35 +150,35 @@
     ========================================= */
     .skills-category {
       font-weight: bold;
-      font-size: 10.5pt;
-      margin-top: 10px;
-      margin-bottom: 4px;
+      font-size: 10pt;
+      margin-top: 8px;
+      margin-bottom: 3px;
     }
 
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 20px;
-      row-gap: 15px;
+      row-gap: 10px;
       margin-top: 5px;
     }
 
     .skills-list {
       list-style-type: square;
-      padding-left: 18px;
+      padding-left: 16px;
     }
 
     .skills-list li {
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     /* =========================================
-       PRINT SETTINGS
+       FOOLPROOF PRINT SETTINGS
     ========================================= */
     @media print {
       @page {
         size: A4;
-        margin: 0;
+        margin: 12mm 15mm; /* Let the printer handle margins natively */
       }
       body {
         background: none;
@@ -191,8 +188,11 @@
       .resume-a4 {
         box-shadow: none;
         width: 100%;
-        height: 100vh;
-        page-break-after: always;
+        height: auto;
+        min-height: auto; /* Removes mathematical height conflicts */
+        padding: 0; 
+        margin: 0;
+        page-break-after: always; /* Forces exact split */
       }
       .resume-a4:last-child {
         page-break-after: auto;
@@ -395,7 +395,7 @@
     </ul>
 
     <h2 class="section-title">Languages</h2>
-    <ul class="bullet-list" style="display: flex; gap: 30px; list-style-type: none; padding-left: 0;">
+    <ul class="bullet-list" style="display: flex; gap: 35px; list-style-type: none; padding-left: 0;">
       <li><strong>English:</strong> Professional Proficiency</li>
       <li><strong>Kannada:</strong> Native / Bilingual Proficiency</li>
       <li><strong>Hindi:</strong> Professional Proficiency</li>
