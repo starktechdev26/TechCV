@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S Jaya Kumar - Resume (2 Pages)</title>
+  <title>S Jaya Kumar - Professional Resume</title>
   <style>
     /* =========================================
        BASE & RESET
@@ -21,7 +21,7 @@
       flex-direction: column;
       align-items: center;
       padding: 30px 20px;
-      gap: 30px; /* Space between pages on screen */
+      gap: 30px; 
       color: #000;
     }
 
@@ -35,7 +35,7 @@
     ========================================= */
     .resume-a4 {
       width: 210mm;
-      min-height: 297mm; /* Allows flexbox to push footer down */
+      min-height: 297mm; 
       background-color: #fff;
       padding: 15mm 18mm; 
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -44,7 +44,7 @@
     }
 
     .page-indicator {
-      margin-top: auto; /* Pushes to the bottom naturally without absolute positioning */
+      margin-top: auto; 
       text-align: center;
       font-size: 8.5pt;
       color: #666;
@@ -63,16 +63,17 @@
       color: #1f4e79; 
       font-size: 24pt;
       font-weight: normal;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       text-transform: capitalize;
     }
 
     .contact-info {
       font-size: 9.5pt;
       color: #333;
+      line-height: 1.5;
     }
     
-    .contact-info span {
+    .contact-info span.pipe {
       margin: 0 5px;
       color: #999;
     }
@@ -100,16 +101,16 @@
       text-transform: uppercase;
       border-bottom: 1.5px solid #1f4e79;
       padding-bottom: 2px;
-      margin-top: 14px;
-      margin-bottom: 8px;
+      margin-top: 16px;
+      margin-bottom: 10px;
     }
 
     /* =========================================
        BODY CONTENT
     ========================================= */
     p, li {
-      font-size: 9.5pt;
-      line-height: 1.45;
+      font-size: 10pt;
+      line-height: 1.5;
     }
 
     .summary {
@@ -123,7 +124,7 @@
       align-items: baseline;
       font-weight: bold;
       font-size: 10pt;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .entry-subtitle {
@@ -133,16 +134,24 @@
       font-style: italic;
       font-size: 9.5pt;
       margin-bottom: 4px;
+      color: #333;
+    }
+
+    .entry-description {
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 4px;
     }
 
     ul.bullet-list {
       padding-left: 18px;
       margin-top: 3px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     ul.bullet-list li {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     /* =========================================
@@ -151,8 +160,8 @@
     .skills-category {
       font-weight: bold;
       font-size: 10pt;
-      margin-top: 8px;
-      margin-bottom: 3px;
+      margin-top: 10px;
+      margin-bottom: 4px;
     }
 
     .skills-grid {
@@ -169,7 +178,7 @@
     }
 
     .skills-list li {
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     /* =========================================
@@ -178,7 +187,7 @@
     @media print {
       @page {
         size: A4;
-        margin: 12mm 15mm; /* Let the printer handle margins natively */
+        margin: 12mm 15mm; 
       }
       body {
         background: none;
@@ -189,10 +198,10 @@
         box-shadow: none;
         width: 100%;
         height: auto;
-        min-height: auto; /* Removes mathematical height conflicts */
+        min-height: auto; 
         padding: 0; 
         margin: 0;
-        page-break-after: always; /* Forces exact split */
+        page-break-after: always; 
       }
       .resume-a4:last-child {
         page-break-after: auto;
@@ -214,91 +223,64 @@
     <header>
       <h1>S Jaya Kumar</h1>
       <div class="contact-info">
-        kumarsjaya141@gmail.com <span>|</span> 
-        +91 6388229889 <span>|</span> 
-        Nelamangala, Bangalore, KA <span>|</span> 
-        <a href="https://linkedin.com/in/sjayakumar" target="_blank">linkedin.com/in/sjayakumar</a> <span>|</span> 
-        <a href="https://github.com/starktechdev26" target="_blank">github.com/starktechdev26</a> <span>|</span> 
-        <a href="https://starktechdev26.github.io/" target="_blank">starktechdev26.github.io</a>
+        Nelamangala, Bengaluru, Karnataka, India <br>
+        kumarsjaya141@gmail.com <span class="pipe">|</span> 
+        +91 6388229889 <span class="pipe">|</span> 
+        <a href="https://linkedin.com/in/sjayakumar" target="_blank">LinkedIn</a> <span class="pipe">|</span> 
+        <a href="https://github.com/starktechdev26" target="_blank">GitHub</a> <span class="pipe">|</span> 
+        <a href="https://starktechdev26.github.io/" target="_blank">Portfolio</a>
       </div>
     </header>
 
     <h2 class="section-title">Professional Summary</h2>
     <p class="summary">
-      Ambitious and logic-driven BCA graduate with a strong foundation in full-stack architecture and a passion for building practical, user-centric software solutions. Hands-on experience conceptualizing and deploying secure mobile applications, responsive web platforms, and data-driven Python scripts. Highly adaptable problem-solver with a keen eye for optimizing technical workflows, eager to leverage deep technical expertise in a dynamic enterprise environment.
+      Recent Bachelor of Computer Applications graduate with First Class Distinction, equipped with a strong foundation in full-stack web and mobile application development. Proven ability to build offline-first, secure mobile solutions and AI-driven voice assistants. Demonstrated practical experience through a Python Developer Internship and multiple hands-on projects. Eager to leverage technical skills in Python, Java, and Android development in a dynamic software engineering or technical administrative role.
     </p>
 
     <h2 class="section-title">Education</h2>
     
     <div class="entry-header">
-      <span>Harsha Institute Of Management Studies | Bangalore University</span>
-      <span>Aug 2026</span>
+      <span>Bachelor of Computer Applications (BCA) - NEP Syllabus</span>
+      <span>August 2026</span>
     </div>
     <div class="entry-subtitle">
-      <span>Bachelor of Computer Applications (BCA) — Results Awaited</span>
-      <span>Bangalore, India</span>
+      <span>Bangalore University, Harsha Institutes</span>
+      <span>Bengaluru, India</span>
     </div>
+    <ul class="bullet-list">
+      <li><strong>Grade:</strong> 7.26 CGPA (First Class Distinction)</li>
+      <li><strong>Core Coursework:</strong> Data Structures, Database Management Systems, Java Programming, Web Technologies, Software Engineering.</li>
+    </ul>
 
-    <div class="entry-header">
-      <span>Karnataka State Board (KSEAB)</span>
-      <span>May 2023</span>
-    </div>
-    <div class="entry-subtitle">
-      <span>CEBA (Computer Science), 12th (PUC)</span>
-      <span>Bangalore, India</span>
-    </div>
-
-    <div class="entry-header">
-      <span>CBSE Board</span>
-      <span>May 2021</span>
-    </div>
-    <div class="entry-subtitle">
-      <span>10th (SSLC)</span>
-      <span>Lucknow, India</span>
-    </div>
-
-    <h2 class="section-title">Experience</h2>
+    <h2 class="section-title">Professional Experience</h2>
     
     <div class="entry-header">
-      <span>Python Developer Intern (Stock Market)</span>
-      <span>2026</span>
+      <span>Python Developer Intern</span>
+      <span>April 2026 - May 2026</span>
     </div>
     <div class="entry-subtitle">
-      <span>Data Analysis & Algorithm Development</span>
+      <span>Codec Technologies</span>
       <span>Remote / India</span>
     </div>
     <ul class="bullet-list">
-      <li>Leveraged Python to analyze, clean, and process large sets of complex stock market data for trend forecasting.</li>
-      <li>Developed automated scripts to identify market trends and optimize data retrieval processes, increasing operational efficiency.</li>
-      <li>Documented algorithmic logic and shared actionable insights to refine programmatic data collection workflows.</li>
+      <li>Completed an intensive online internship program focused on Python development, strengthening programming fundamentals and practical application.</li>
+      <li>Engineered Python scripts and modular code structures to support core software development workflows.</li>
+      <li>Collaborative problem-solving and application of software design principles in virtual project environments.</li>
     </ul>
 
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Key Projects</h2>
     
     <div class="entry-header">
-      <span>Raksha-Suraksha</span>
+      <span>Raksha-Suraksha (Android Personal Safety Application)</span>
       <span>2026</span>
     </div>
-    <div class="entry-subtitle">
-      <span>Personal Security & SOS Ecosystem</span>
+    <div class="entry-description">
+      Developed an offline-first Android personal safety and anti-theft application.
     </div>
     <ul class="bullet-list">
-      <li><strong>Architecture:</strong> Designed a robust mobile security application focused on device anti-theft and personal safety protocols.</li>
-      <li><strong>Web Portal:</strong> Built a responsive companion dashboard using HTML, CSS, JavaScript, and PHP for secure user access and app distribution.</li>
-      <li><strong>Core Logic:</strong> Engineered critical safety features, including an automated inactivity SOS trigger designed to alert emergency contacts without manual interaction.</li>
-      <li><strong>Backend Integration:</strong> Integrated a MySQL database to handle secure user authentication and data management between the app and the web portal.</li>
-    </ul>
-
-    <div class="entry-header">
-      <span>Jarvis Voice Assistant</span>
-      <span>2026</span>
-    </div>
-    <div class="entry-subtitle">
-      <span>AI-Driven Interactive Chat System</span>
-    </div>
-    <ul class="bullet-list">
-      <li>Developed a character-themed, voice-automated AI chat system integrating real-time scanning functionalities for interactive user experience.</li>
-      <li>Optimized voice-to-text algorithms to ensure responsive, low-latency command execution.</li>
+      <li>Implemented key security features including a tactical vector radar, emergency SMS triggers, automated response schedules, and remote wake protocols.</li>
+      <li>Focused on privacy-centric, zero-cloud architecture utilizing local storage and permission sandboxing for high reliability.</li>
+      <li>Authored and presented the comprehensive academic project report and presentation for final BCA submission in June 2026.</li>
     </ul>
 
     <div class="page-indicator">S Jaya Kumar | Resume | Page 1 of 2</div>
@@ -314,91 +296,72 @@
       S Jaya Kumar | kumarsjaya141@gmail.com | +91 6388229889 | Page 2 of 2
     </div>
 
-    <h2 class="section-title">Projects (Continued)</h2>
+    <h2 class="section-title">Key Projects (Continued)</h2>
 
     <div class="entry-header">
-      <span>Weather Forecasting Application</span>
-      <span>2025</span>
+      <span>Custom Offline AI Voice Assistants</span>
+      <span>2026</span>
     </div>
-    <div class="entry-subtitle">
-      <span>Real-Time Meteorological Data Parser</span>
+    <div class="entry-description">
+      Designed and built local, offline AI assistant systems (J.A.R.V.I.S., Leo, Veronica, and Titanium Guard).
     </div>
     <ul class="bullet-list">
-      <li>Built a dynamic mobile application utilizing RESTful APIs to parse, process, and display real-time meteorological data accurately.</li>
-      <li>Implemented an intuitive UI to seamlessly switch between daily forecasts and detailed granular environmental metrics.</li>
+      <li>Leveraged Python, Termux, Vosk speech recognition, and local language models to ensure zero-cloud dependency and complete data privacy.</li>
+      <li>Programmed custom voice-command triggers and automated system routines running natively on lightweight local environments.</li>
     </ul>
 
     <div class="entry-header">
-      <span>Web-to-App Bridge</span>
-      <span>2025</span>
+      <span>Developer Portfolio Websites</span>
+      <span>2025 - 2026</span>
     </div>
-    <div class="entry-subtitle">
-      <span>Cross-Platform Control System</span>
-    </div>
-    <ul class="bullet-list">
-      <li>Engineered a robust cross-platform control system allowing seamless management of mobile device functions directly via a web interface.</li>
-      <li>Secured end-to-end communication channels to ensure data integrity during remote execution sequences.</li>
-    </ul>
-
-    <div class="entry-header">
-      <span>Accessibility Integration Tool</span>
-      <span>2025</span>
-    </div>
-    <div class="entry-subtitle">
-      <span>Custom Hand-Tap Navigation</span>
+    <div class="entry-description">
+      Created and hosted responsive personal developer portfolio websites.
     </div>
     <ul class="bullet-list">
-      <li>Designed a specialized mobile application feature allowing intuitive device navigation and control through custom hand-tap gestures.</li>
-      <li>Utilized core accessibility services to override standard physical inputs, providing an alternate control ecosystem.</li>
+      <li>Built performant UI layouts utilizing HTML5, CSS3, and JavaScript, hosted via GitHub Pages.</li>
+      <li>Integrated Google Search Console to monitor search impressions, performance metrics, and site indexing.</li>
     </ul>
 
     <h2 class="section-title">Technical Skills</h2>
     
     <div class="skills-grid">
+      <!-- Column 1 -->
       <div>
         <div class="skills-category">Programming Languages</div>
         <ul class="skills-list">
-          <li>Java, XML, Python</li>
-          <li>JavaScript, PHP, C++</li>
+          <li>Python, Java, JavaScript</li>
+          <li>PHP, HTML5, CSS3</li>
         </ul>
 
-        <div class="skills-category">Web Technologies</div>
+        <div class="skills-category">Databases</div>
         <ul class="skills-list">
-          <li>HTML5, CSS3</li>
-          <li>Responsive Web Design</li>
+          <li>MySQL, SQLite, Firebase</li>
         </ul>
       </div>
 
+      <!-- Column 2 -->
       <div>
-        <div class="skills-category">Core Concepts</div>
+        <div class="skills-category">Architecture & Frameworks</div>
         <ul class="skills-list">
-          <li>Object-Oriented Programming (OOP)</li>
-          <li>System Architecture & Application Logic</li>
-          <li>Data Structures & Algorithms</li>
-          <li>API Integration & RESTful Services</li>
-          <li>Application Security Protocols</li>
+          <li>Offline-first architecture</li>
+          <li>Permission Sandboxing</li>
+          <li>Vosk Speech Recognition</li>
+          <li>Local Language Models</li>
         </ul>
         
-        <div class="skills-category">Databases</div>
+        <div class="skills-category">Tools & Environments</div>
         <ul class="skills-list">
-          <li>MySQL, SQL</li>
+          <li>Git, GitHub, Termux</li>
+          <li>Android Application Development</li>
+          <li>Linux Terminal Environments</li>
         </ul>
       </div>
     </div>
 
-    <h2 class="section-title">Soft Skills & Competencies</h2>
+    <h2 class="section-title">Additional Information</h2>
     <ul class="bullet-list">
-      <li><strong>Analytical Thinking:</strong> Strong capability in problem-solving and critical analysis of complex application logic.</li>
-      <li><strong>Workflow Management:</strong> Effective time management, adaptability, and leadership across software development lifecycles.</li>
-      <li><strong>Collaboration:</strong> Proven teamwork and clear communication skills demonstrated through interdisciplinary project conceptualization.</li>
-      <li><strong>Continuous Learning:</strong> Fast learner with a proactive approach to mastering new mobile architectures and cybersecurity fundamentals.</li>
-    </ul>
-
-    <h2 class="section-title">Languages</h2>
-    <ul class="bullet-list" style="display: flex; gap: 35px; list-style-type: none; padding-left: 0;">
-      <li><strong>English:</strong> Professional Proficiency</li>
-      <li><strong>Kannada:</strong> Native / Bilingual Proficiency</li>
-      <li><strong>Hindi:</strong> Professional Proficiency</li>
+      <li><strong>Languages:</strong> English, Kannada</li>
+      <li><strong>Interests:</strong> Mobile application development, offline-first system architecture, technical government examination preparation (KPSC FDA, RRB JE IT).</li>
     </ul>
 
     <div class="page-indicator">S Jaya Kumar | Resume | Page 2 of 2</div>
