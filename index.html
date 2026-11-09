@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S Jaya Kumar - Professional Resume</title>
+  <title>S Jaya Kumar - Web & App Developer Resume</title>
   <style>
     /* =========================================
        BASE & RESET
@@ -12,23 +12,22 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     }
 
     body {
-      background-color: #d9e2ec; 
+      background-color: #525659; 
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 30px 20px;
       gap: 30px; 
-      color: #333;
+      color: #111;
     }
 
     a {
       color: #2980b9;
       text-decoration: none;
-      font-weight: 600;
     }
 
     a:hover {
@@ -36,25 +35,25 @@
     }
 
     /* =========================================
-       A4 PAGE SETUP (Screen View)
+       A4 PAGE SETUP & BORDERS
     ========================================= */
     .resume-a4 {
       width: 210mm;
       min-height: 297mm; 
       background-color: #fff;
-      padding: 10mm; /* Outer padding before border */
+      padding: 10mm; 
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
     }
 
     .page-border {
-      border: 2.5px solid #2c3e50;
+      border: 2px solid #2c3e50;
       outline: 1px solid #2c3e50;
       outline-offset: 3px;
       height: 100%;
       flex: 1;
-      padding: 15mm; /* Inner padding inside border */
+      padding: 12mm 15mm; 
       display: flex;
       flex-direction: column;
       position: relative;
@@ -62,22 +61,22 @@
 
     .page-indicator {
       position: absolute;
-      bottom: 5mm;
+      bottom: 6mm;
       left: 0;
       width: 100%;
       text-align: center;
       font-size: 8pt;
-      color: #666;
+      color: #7f8c8d;
     }
 
     /* =========================================
-       HEADER (Name & Contact)
+       HEADER (Perfectly Aligned)
     ========================================= */
     header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .header-text {
@@ -90,29 +89,41 @@
       color: #2c3e50;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     h2.job-title {
-      font-size: 14pt;
-      font-weight: 600;
+      font-size: 13.5pt;
+      font-weight: 700;
       color: #d35400;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* 2x2 Contact Grid */
+    /* Strict Grid for Flawless Alignment */
     .contact-grid {
       display: grid;
-      grid-template-columns: auto auto;
-      row-gap: 6px;
-      column-gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 8px;
+      column-gap: 20px;
       font-size: 9.5pt;
     }
 
-    .contact-grid div strong {
+    .contact-grid .contact-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-grid span.label {
+      font-weight: 700;
       color: #2c3e50;
-      display: inline-block;
-      width: 55px; 
+      width: 70px; /* Forces all colons into a perfect vertical line */
+      flex-shrink: 0;
+    }
+
+    .contact-grid span.value {
+      color: #333;
     }
 
     .header-image {
@@ -121,11 +132,12 @@
 
     .header-image img {
       width: 105px;
-      height: 135px; /* Passport ratio */
+      height: 135px; /* Perfect Passport Ratio */
       object-fit: cover;
       object-position: top center;
       border: 2px solid #2c3e50;
-      padding: 2px;
+      padding: 3px;
+      background-color: #fff;
     }
 
     /* =========================================
@@ -133,14 +145,15 @@
     ========================================= */
     .section-title {
       color: #2c3e50;
-      font-size: 13pt;
-      font-weight: bold;
+      font-size: 12.5pt;
+      font-weight: 800;
       text-transform: uppercase;
       border-bottom: 1.5px solid #bdc3c7;
-      padding-bottom: 3px;
+      padding-bottom: 4px;
       margin-top: 18px;
       margin-bottom: 12px;
       position: relative;
+      letter-spacing: 0.5px;
     }
 
     .section-title::after {
@@ -158,7 +171,8 @@
     ========================================= */
     p, li, td, th {
       font-size: 10pt;
-      line-height: 1.5;
+      line-height: 1.55;
+      color: #222;
     }
 
     .summary {
@@ -166,24 +180,38 @@
     }
 
     /* =========================================
-       EDUCATION TABLE 
+       EDUCATION TABLE (Aligned & Proportioned)
     ========================================= */
     .edu-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 5px;
+      margin-bottom: 5px;
     }
 
     .edu-table th, .edu-table td {
-      border: 1.5px solid #2c3e50;
-      padding: 8px 10px;
-      text-align: left;
+      border: 1px solid #2c3e50;
+      padding: 8px 12px;
+      vertical-align: middle;
     }
 
     .edu-table th {
       background-color: #f4f6f9;
       font-weight: 700;
       color: #2c3e50;
+      font-size: 9.5pt;
+      text-transform: uppercase;
+    }
+
+    /* Column Widths to prevent awkward line breaks */
+    .edu-table th:nth-child(1) { width: 22%; }
+    .edu-table th:nth-child(2) { width: 46%; }
+    .edu-table th:nth-child(3) { width: 14%; text-align: center; }
+    .edu-table th:nth-child(4) { width: 18%; text-align: center; }
+    
+    .edu-table td:nth-child(3), .edu-table td:nth-child(4) { 
+      text-align: center; 
+      font-weight: 600;
     }
 
     /* =========================================
@@ -196,11 +224,12 @@
       font-weight: 700;
       font-size: 10.5pt;
       color: #2c3e50;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .entry-date {
       font-size: 9pt;
+      font-weight: 700;
       color: #d35400;
     }
 
@@ -208,12 +237,12 @@
       font-style: italic;
       font-size: 9.5pt;
       color: #555;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     ul.bullet-list {
-      padding-left: 20px;
-      margin-top: 5px;
+      padding-left: 18px;
+      margin-top: 4px;
       margin-bottom: 8px;
     }
 
@@ -222,7 +251,7 @@
     }
 
     /* =========================================
-       SKILLS (Inline / Flex)
+       SKILLS TAGS (Perfectly Centered Text)
     ========================================= */
     .skills-wrapper {
       display: flex;
@@ -234,22 +263,28 @@
       background-color: #f4f6f9;
       border: 1px solid #dce1e8;
       border-radius: 4px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       font-size: 9pt;
       font-weight: 600;
       color: #2c3e50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
 
     .category-label {
       font-weight: 700;
       color: #d35400;
-      margin-top: 8px;
-      margin-bottom: 4px;
+      margin-top: 10px;
+      margin-bottom: 6px;
       font-size: 9.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* =========================================
-       FOOLPROOF PRINT SETTINGS
+       PRINT SETTINGS
     ========================================= */
     @media print {
       @page {
@@ -295,16 +330,18 @@
           <h2 class="job-title">Web & App Developer</h2>
           
           <div class="contact-grid">
-            <div><strong>Ph no</strong> - +91 6388229889</div>
-            <div><strong>Linke</strong> - <a href="https://linkedin.com/in/sjayakumar" target="_blank">linkedin.com/in/sjayakumar</a></div>
-            <div><strong>Emai</strong> - kumarsjaya141@gmail.com</div>
-            <div><strong>Github</strong> - <a href="https://starktechdev26.github.io/Starkdev/" target="_blank">starktechdev26.github.io/Starkdev/</a></div>
+            <div class="contact-item"><span class="label">Phone:</span> <span class="value">+91 6388229889</span></div>
+            <div class="contact-item"><span class="label">LinkedIn:</span> <span class="value"><a href="https://linkedin.com/in/sjayakumar" target="_blank">linkedin.com/in/sjayakumar</a></span></div>
+            <div class="contact-item"><span class="label">Email:</span> <span class="value">kumarsjaya141@gmail.com</span></div>
+            <div class="contact-item"><span class="label">GitHub:</span> <span class="value"><a href="https://starktechdev26.github.io/Starkdev/" target="_blank">starktechdev26.github.io/Starkdev/</a></span></div>
+            <div class="contact-item" style="grid-column: 1 / -1; margin-top: 4px;">
+              <span class="label">Location:</span> <span class="value">Nelamangala, Bengaluru, Karnataka, India</span>
+            </div>
           </div>
-          <div style="margin-top: 6px; font-size: 9.5pt;"><strong>Location</strong> - Nelamangala, Bengaluru, Karnataka, India</div>
         </div>
         
         <div class="header-image">
-          <img src="IMG_20261108_145422.jpg" alt="Photo">
+          <img src="IMG_20261108_145422.jpg" alt="S Jaya Kumar">
         </div>
       </header>
 
@@ -327,20 +364,20 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>BCA</strong> (NEP Syllabus)</td>
-            <td>HARSHA INSTITUTE OF MANAGEMENT STUDIES | Bangalore University</td>
+            <td><strong>BCA</strong><br><span style="font-size: 8.5pt; font-weight:normal;">(NEP Syllabus)</span></td>
+            <td>HARSHA INSTITUTE OF MANAGEMENT STUDIES<br><span style="font-size: 8.5pt;">Bangalore University</span></td>
             <td>Aug 2026</td>
-            <td>7.26 CGPA (First Class)</td>
+            <td>7.26 CGPA<br><span style="font-size: 8.5pt; font-weight:normal;">(First Class)</span></td>
           </tr>
           <tr>
-            <td><strong>12th (PUC)</strong> CEBA (Computer Science)</td>
-            <td>Karnataka State Board (KSEAB), Bangalore</td>
+            <td><strong>12th (PUC)</strong><br><span style="font-size: 8.5pt; font-weight:normal;">CEBA (Computer Science)</span></td>
+            <td>Karnataka State Board (KSEAB)<br><span style="font-size: 8.5pt;">Bangalore</span></td>
             <td>May 2023</td>
             <td>Passed</td>
           </tr>
           <tr>
             <td><strong>10th (SSLC)</strong></td>
-            <td>CBSE Board, Lucknow</td>
+            <td>CBSE Board<br><span style="font-size: 8.5pt;">Lucknow</span></td>
             <td>Aug 2021</td>
             <td>Passed</td>
           </tr>
@@ -373,7 +410,7 @@
         <span class="skill-tag">Critical Thinking</span>
       </div>
 
-      <!-- TECH SKILLS -->
+      <!-- TECH SKILLS (Part 1) -->
       <h3 class="section-title">Tech Skills</h3>
       
       <div class="category-label">Languages</div>
@@ -404,6 +441,7 @@
   <div class="resume-a4" style="margin-top: 30px;">
     <div class="page-border">
       
+      <!-- TECH SKILLS (Part 2) -->
       <h3 class="section-title" style="margin-top: 0;">Tech Skills (Continued)</h3>
 
       <div class="category-label">Databases</div>
@@ -412,23 +450,27 @@
         <span class="skill-tag">SQL</span>
       </div>
 
-      <div class="category-label">Core Concepts</div>
+      <div class="category-label">Core Concepts & Architecture</div>
       <div class="skills-wrapper">
         <span class="skill-tag">Object-Oriented Programming (OOP)</span>
         <span class="skill-tag">System Architecture & App Logic</span>
         <span class="skill-tag">Data Structures & Algorithms</span>
         <span class="skill-tag">API Integration & RESTful Services</span>
         <span class="skill-tag">Application Security Protocols</span>
+        <span class="skill-tag">Offline-First Architecture</span>
+        <span class="skill-tag">Permission Sandboxing</span>
       </div>
 
-      <h3 class="section-title" style="margin-top: 15px;">Languages</h3>
+      <!-- LANGUAGES -->
+      <h3 class="section-title" style="margin-top: 18px;">Languages</h3>
       <div class="skills-wrapper">
-        <span class="skill-tag">English</span>
-        <span class="skill-tag">Kannada</span>
-        <span class="skill-tag">Hindi</span>
+        <span class="skill-tag">English (Professional)</span>
+        <span class="skill-tag">Kannada (Native/Bilingual)</span>
+        <span class="skill-tag">Hindi (Professional)</span>
       </div>
 
-      <h3 class="section-title" style="margin-top: 15px;">Key Projects</h3>
+      <!-- KEY PROJECTS -->
+      <h3 class="section-title" style="margin-top: 18px;">Key Projects</h3>
       
       <div class="entry-header">
         <span>Raksha-Suraksha</span>
@@ -436,9 +478,10 @@
       </div>
       <div class="entry-subtitle">Android Personal Security & SOS Ecosystem</div>
       <ul class="bullet-list">
-        <li><strong>Architecture:</strong> Designed a robust mobile security application focused on device anti-theft and personal safety protocols.</li>
-        <li><strong>Web Portal:</strong> Built a responsive companion dashboard using HTML, CSS, JavaScript, and PHP for secure app distribution.</li>
-        <li><strong>Core Logic:</strong> Engineered critical safety features, including an automated inactivity SOS trigger for emergency response.</li>
+        <li><strong>Architecture:</strong> Designed a robust, privacy-centric mobile security application focused on device anti-theft and personal safety utilizing local storage.</li>
+        <li><strong>Web Portal:</strong> Built a responsive companion dashboard using HTML, CSS, JavaScript, and PHP for secure user access and app distribution.</li>
+        <li><strong>Core Logic:</strong> Engineered critical safety features, including an automated inactivity SOS trigger, tactical vector radar, and remote wake protocols.</li>
+        <li><strong>Backend:</strong> Integrated a MySQL database to handle secure user authentication and data management between the app and the web portal.</li>
       </ul>
 
       <div class="entry-header">
@@ -447,10 +490,20 @@
       </div>
       <div class="entry-subtitle">Java, XML, APIs, and AI Integration</div>
       <ul class="bullet-list">
-        <li><strong>Jarvis Voice Assistant:</strong> Developed a character-themed, voice-automated AI chat system integrating real-time scanning functionalities.</li>
-        <li><strong>Weather Forecasting App:</strong> Built a dynamic application utilizing RESTful APIs to parse and display real-time meteorological data.</li>
-        <li><strong>Web-to-App Bridge:</strong> Engineered a cross-platform control system allowing seamless management of mobile functions via a web interface.</li>
-        <li><strong>Accessibility Integration:</strong> Designed a specialized mobile app feature allowing intuitive device navigation through custom hand-tap gestures.</li>
+        <li><strong>Jarvis Voice Assistant:</strong> Developed a character-themed, voice-automated AI chat system integrating real-time scanning functionalities. Utilized local language models to ensure zero-cloud dependency and complete data privacy.</li>
+        <li><strong>Weather Forecasting App:</strong> Built a dynamic application utilizing RESTful APIs to parse, process, and display real-time meteorological data accurately.</li>
+        <li><strong>Web-to-App Bridge:</strong> Engineered a robust cross-platform control system allowing seamless management of mobile device functions directly via a web interface, utilizing secure end-to-end communication channels.</li>
+        <li><strong>Accessibility Integration:</strong> Designed a specialized mobile app feature allowing intuitive device navigation and control through custom hand-tap gestures, overriding standard physical inputs.</li>
+      </ul>
+
+      <div class="entry-header">
+        <span>Developer Portfolio Websites</span>
+        <span class="entry-date">2025 - 2026</span>
+      </div>
+      <div class="entry-subtitle">Responsive Personal Portfolios</div>
+      <ul class="bullet-list">
+        <li>Built performant UI layouts utilizing HTML5, CSS3, and JavaScript, hosted via GitHub Pages.</li>
+        <li>Integrated Google Search Console to monitor search impressions, performance metrics, and site indexing.</li>
       </ul>
 
       <div class="page-indicator">S Jaya Kumar - Page 2 of 2</div>
