@@ -16,7 +16,7 @@
     }
 
     body {
-      background-color: #d9e2ec;
+      background-color: #d9e2ec; 
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -40,313 +40,216 @@
     ========================================= */
     .resume-a4 {
       width: 210mm;
-      height: 297mm; /* Strict A4 limit */
-      background-color: #e0e5ec;
-      box-shadow: 20px 20px 50px #b8c0c8, -20px -20px 50px #ffffff;
-      border-radius: 12px;
+      min-height: 297mm; 
+      background-color: #fff;
+      padding: 10mm; /* Outer padding before border */
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+    }
+
+    .page-border {
+      border: 2.5px solid #2c3e50;
+      outline: 1px solid #2c3e50;
+      outline-offset: 3px;
+      height: 100%;
+      flex: 1;
+      padding: 15mm; /* Inner padding inside border */
+      display: flex;
+      flex-direction: column;
       position: relative;
     }
 
-    .page-header {
-      height: 16px;
-      background: linear-gradient(90deg, #1a252f, #2c3e50, #d35400, #e67e22);
+    .page-indicator {
+      position: absolute;
+      bottom: 5mm;
+      left: 0;
       width: 100%;
-      z-index: 10;
-      flex-shrink: 0;
-    }
-
-    .content-wrapper {
-      display: flex;
-      flex: 1; 
-      overflow: hidden;
-    }
-
-    /* Left Sidebar */
-    .sidebar {
-      width: 36%;
-      background: linear-gradient(135deg, #e8ecef 0%, #d1d9e6 100%);
-      padding: 30px 25px;
-      border-right: 2px solid #ffffff;
-      display: flex;
-      flex-direction: column;
-      gap: 16px; 
-      box-shadow: inset -5px 0 15px rgba(0,0,0,0.02);
-    }
-
-    /* Right Main Content */
-    .main-content {
-      width: 64%;
-      background-color: #fafafa;
-      padding: 30px 35px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .page-footer {
-      height: 18px;
-      background: linear-gradient(90deg, #d1d9e6, #e0e5ec);
-      border-top: 1px solid #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 7.5pt;
-      font-weight: 600;
-      color: #7f8c8d;
-      letter-spacing: 2px;
-      flex-shrink: 0;
-      margin-top: auto;
+      text-align: center;
+      font-size: 8pt;
+      color: #666;
     }
 
     /* =========================================
-       PROFILE IMAGE (Square & Rounded)
+       HEADER (Name & Contact)
     ========================================= */
-    .image-container {
+    header {
       display: flex;
-      justify-content: flex-start;
-      margin-bottom: 5px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
     }
 
-    .profile-img {
-      width: 145px;
-      height: 145px;
-      border-radius: 20px; 
-      object-fit: cover;
-      object-position: top center; 
-      box-shadow: 6px 6px 12px #b5bdc6, -6px -6px 12px #ffffff;
-      border: 4px solid #ffffff;
+    .header-text {
+      flex: 1;
     }
 
-    /* =========================================
-       TYPOGRAPHY & HEADINGS
-    ========================================= */
     h1 {
       font-size: 26pt;
       font-weight: 800;
       color: #2c3e50;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
       margin-bottom: 2px;
     }
 
-    h2.title {
-      font-size: 11pt;
-      font-weight: 700;
+    h2.job-title {
+      font-size: 14pt;
+      font-weight: 600;
       color: #d35400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .section-header {
-      font-size: 12.5pt;
-      font-weight: 800;
+    /* 2x2 Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      row-gap: 6px;
+      column-gap: 30px;
+      font-size: 9.5pt;
+    }
+
+    .contact-grid div strong {
       color: #2c3e50;
+      display: inline-block;
+      width: 55px; 
+    }
+
+    .header-image {
+      margin-left: 20px;
+    }
+
+    .header-image img {
+      width: 105px;
+      height: 135px; /* Passport ratio */
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid #2c3e50;
+      padding: 2px;
+    }
+
+    /* =========================================
+       SECTION HEADERS
+    ========================================= */
+    .section-title {
+      color: #2c3e50;
+      font-size: 13pt;
+      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      border-bottom: 2px solid #bdc3c7;
-      padding-bottom: 4px;
+      border-bottom: 1.5px solid #bdc3c7;
+      padding-bottom: 3px;
+      margin-top: 18px;
       margin-bottom: 12px;
       position: relative;
     }
-    
-    .section-header::after {
+
+    .section-title::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -2px;
-      height: 2px;
-      width: 45px;
+      bottom: -1.5px;
+      height: 1.5px;
+      width: 50px;
       background-color: #d35400;
     }
 
-    p, li {
-      font-size: 9pt;
+    /* =========================================
+       BODY CONTENT & TYPOGRAPHY
+    ========================================= */
+    p, li, td, th {
+      font-size: 10pt;
       line-height: 1.5;
-      color: #444;
+    }
+
+    .summary {
+      text-align: justify;
     }
 
     /* =========================================
-       SIDEBAR SECTIONS (Contact, Skills)
+       EDUCATION TABLE 
     ========================================= */
-    .contact-item {
-      margin-bottom: 8px;
-      display: flex;
-      flex-direction: column;
+    .edu-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
     }
-    .contact-item strong {
-      font-size: 8pt;
-      color: #d35400;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+
+    .edu-table th, .edu-table td {
+      border: 1.5px solid #2c3e50;
+      padding: 8px 10px;
+      text-align: left;
     }
-    .contact-item span, .contact-item a {
-      font-size: 8.5pt;
-      color: #333;
-    }
-    
-    /* Blue Pipe Accents for Tech Skills */
-    .skills-category {
-      font-size: 9.5pt;
+
+    .edu-table th {
+      background-color: #f4f6f9;
       font-weight: 700;
       color: #2c3e50;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      border-left: 3px solid #2980b9;
-      padding-left: 8px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px; 
-      margin-bottom: 12px;
-    }
-    
-    .tag {
-      background: #e0e5ec;
-      padding: 5px 12px;
-      border-radius: 6px;
-      font-size: 8.5pt;
-      font-weight: 600;
-      box-shadow: 3px 3px 6px #c5cbd2, -3px -3px 6px #ffffff;
-      color: #2c3e50;
-    }
-
-    /* Tiny Red Triangle Bullets for Core Concepts */
-    ul.concept-list {
-      list-style-type: none;
-      padding-left: 0;
-      margin-bottom: 12px;
-    }
-    ul.concept-list li {
-      position: relative;
-      padding-left: 14px;
-      margin-bottom: 5px;
-      font-size: 8.5pt;
-      font-weight: 500;
-    }
-    ul.concept-list li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #e74c3c;
-      font-weight: bold;
-      font-size: 11pt;
-      top: -2px;
     }
 
     /* =========================================
-       MAIN CONTENT (Profile, Edu, Exp, Projects)
+       EXPERIENCE & PROJECTS
     ========================================= */
-    .profile-text {
-      text-align: justify;
-      background: #f4f6f9;
-      padding: 12px 15px;
-      border-radius: 8px;
-      box-shadow: inset 3px 3px 6px #dce1e8, inset -3px -3px 6px #ffffff;
-      border: 1px solid #ffffff;
-      margin-bottom: 5px;
-    }
-
-    .portfolio-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 12px;
-      background: #e0e5ec;
-      border-radius: 6px;
-      box-shadow: 3px 3px 6px #c8ced5, -3px -3px 6px #ffffff;
-      font-size: 8.5pt;
-      border: 1px solid #f9f9f9;
-    }
-
-    .timeline-item {
-      margin-bottom: 12px;
-    }
-    .timeline-header {
+    .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
-    }
-    .timeline-title {
-      font-weight: 800;
-      font-size: 10pt;
-      color: #2c3e50;
-    }
-    .timeline-date {
-      font-size: 8.5pt;
       font-weight: 700;
+      font-size: 10.5pt;
+      color: #2c3e50;
+      margin-top: 10px;
+    }
+
+    .entry-date {
+      font-size: 9pt;
       color: #d35400;
     }
-    .timeline-subtitle {
-      font-size: 8.5pt;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 4px;
-    }
 
-    /* Darker grey square bullets for normal lists */
-    ul.bullet-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    ul.bullet-list li {
-      position: relative;
-      padding-left: 14px;
+    .entry-subtitle {
+      font-style: italic;
+      font-size: 9.5pt;
+      color: #555;
       margin-bottom: 5px;
     }
-    ul.bullet-list li::before {
-      content: "▪";
-      position: absolute;
-      left: 0;
-      color: #555;
-      font-size: 11pt;
-      top: -3px;
+
+    ul.bullet-list {
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 8px;
     }
 
-    /* 3D Elevated Card for Projects */
-    .project-card {
-      background: #ffffff;
-      padding: 14px 15px;
-      border-radius: 10px;
-      box-shadow: 4px 4px 12px #e1e5eb, -4px -4px 12px #ffffff;
-      margin-bottom: 15px;
-      border: 1px solid #f4f4f4;
-    }
-
-    .project-card ul {
-      margin-top: 6px;
-    }
-    .project-card li {
+    ul.bullet-list li {
       margin-bottom: 4px;
-    }
-
-    /* Deep Blue square bullets for mini projects */
-    .mini-projects {
-      list-style: none;
-      padding-left: 0 !important;
-    }
-    .mini-projects li {
-      margin-bottom: 8px !important;
-      padding-left: 14px;
-      position: relative;
-    }
-    .mini-projects li::before {
-      content: "▪";
-      color: #2980b9;
-      position: absolute;
-      left: 0;
-      font-size: 12pt;
-      top: -3px;
     }
 
     /* =========================================
-       PRINT SPECIFIC FIXES (Forces exact pages)
+       SKILLS (Inline / Flex)
+    ========================================= */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background-color: #f4f6f9;
+      border: 1px solid #dce1e8;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .category-label {
+      font-weight: 700;
+      color: #d35400;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-size: 9.5pt;
+    }
+
+    /* =========================================
+       FOOLPROOF PRINT SETTINGS
     ========================================= */
     @media print {
       @page {
@@ -361,10 +264,11 @@
       .resume-a4 {
         box-shadow: none;
         width: 100%;
-        height: 100vh;
+        height: auto;
+        min-height: auto; 
+        padding: 8mm; 
         margin: 0;
-        border-radius: 0;
-        page-break-after: always;
+        page-break-after: always; 
       }
       .resume-a4:last-child {
         page-break-after: auto;
@@ -382,211 +286,175 @@
        PAGE 1
   ========================================= -->
   <div class="resume-a4">
-    <div class="page-header"></div>
-    <div class="content-wrapper">
+    <div class="page-border">
       
-      <!-- PAGE 1 SIDEBAR -->
-      <div class="sidebar">
-        <div class="image-container">
-          <img src="IMG_20261108_145422.jpg" alt="S Jaya Kumar" class="profile-img">
-        </div>
-
-        <div class="section">
-          <h3 class="section-header">Contact</h3>
-          <div class="contact-item">
-            <strong>Phone</strong>
-            <span>+91 6388229889</span>
-          </div>
-          <div class="contact-item">
-            <strong>Email</strong>
-            <span>kumarsjaya141@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <strong>Location</strong>
-            <span>Nelamangala, Bangalore, Karnataka</span>
-          </div>
-          <div class="contact-item">
-            <strong>GitHub</strong>
-            <a href="https://github.com/starktechdev26" target="_blank">github.com/starktechdev26</a>
-          </div>
-          <div class="contact-item">
-            <strong>LinkedIn</strong>
-            <a href="https://linkedin.com/in/sjayakumar" target="_blank">linkedin.com/in/sjayakumar</a> 
-          </div>
-        </div>
-
-        <div class="section">
-          <h3 class="section-header">Soft Skills</h3>
-          <div class="skill-tags">
-            <span class="tag">Problem Solving</span>
-            <span class="tag">Adaptability</span>
-            <span class="tag">Teamwork</span>
-            <span class="tag">Fast Learner</span>
-            <span class="tag">Time Management</span>
-            <span class="tag">Leadership</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Critical Thinking</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- PAGE 1 MAIN CONTENT -->
-      <div class="main-content">
-        <header>
+      <!-- HEADER -->
+      <header>
+        <div class="header-text">
           <h1>S Jaya Kumar</h1>
-          <h2 class="title">Full-Stack & Mobile Developer</h2>
-        </header>
-
-        <div>
-          <h3 class="section-header">Profile</h3>
-          <div class="profile-text">
-            <p>
-              Ambitious and logic-driven BCA graduate with a strong foundation in full-stack architecture and a passion for building practical, user-centric software solutions. Hands-on experience conceptualizing and deploying secure mobile applications, responsive web platforms, and data-driven Python scripts. Highly adaptable problem-solver with a keen eye for optimizing technical workflows, eager to leverage deep technical expertise in a dynamic enterprise environment.
-            </p>
-            <div class="portfolio-link">
-              <strong>Interactive Portfolio:</strong> <a href="https://starktechdev26.github.io/Starkdev/" target="_blank">starktechdev26.github.io/Starkdev/</a>
-            </div>
+          <h2 class="job-title">Web & App Developer</h2>
+          
+          <div class="contact-grid">
+            <div><strong>Ph no</strong> - +91 6388229889</div>
+            <div><strong>Linke</strong> - <a href="https://linkedin.com/in/sjayakumar" target="_blank">linkedin.com/in/sjayakumar</a></div>
+            <div><strong>Emai</strong> - kumarsjaya141@gmail.com</div>
+            <div><strong>Github</strong> - <a href="https://starktechdev26.github.io/Starkdev/" target="_blank">starktechdev26.github.io/Starkdev/</a></div>
           </div>
+          <div style="margin-top: 6px; font-size: 9.5pt;"><strong>Location</strong> - Nelamangala, Bengaluru, Karnataka, India</div>
         </div>
-
-        <div>
-          <h3 class="section-header">Education</h3>
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-title">Bachelor of Computer Applications (BCA)</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <div class="timeline-subtitle">HARSHA INSTITUTE OF MANAGEMENT STUDIES | Bangalore university</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-title">CEBA (Computer Science)</span>
-              <span class="timeline-date">May 2023</span>
-            </div>
-            <div class="timeline-subtitle">12th (PUC) | Karnataka State Board, Bangalore</div>
-          </div>
-          <div class="timeline-item" style="margin-bottom: 0;">
-            <div class="timeline-header">
-              <span class="timeline-title">10th (SSLC)</span>
-              <span class="timeline-date">Aug 2021</span>
-            </div>
-            <div class="timeline-subtitle">CBSE Board, Lucknow</div>
-          </div>
+        
+        <div class="header-image">
+          <img src="IMG_20261108_145422.jpg" alt="Photo">
         </div>
+      </header>
 
-        <div>
-          <h3 class="section-header">Experience</h3>
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-title">Python Developer Intern (Stock Market)</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <div class="timeline-subtitle">Data Analysis & Algorithm Development</div>
-            <ul class="bullet-list">
-              <li>Leveraged Python to analyze and process large sets of complex stock market data.</li>
-              <li>Developed automated scripts to identify market trends and optimize data retrieval processes efficiently.</li>
-            </ul>
-          </div>
-        </div>
+      <!-- PROFESSIONAL SUMMARY -->
+      <h3 class="section-title">Professional Summary</h3>
+      <p class="summary">
+        Ambitious and logic-driven BCA graduate with First Class Distinction, equipped with a strong foundation in full-stack web and mobile application development. Proven ability to build offline-first, secure mobile solutions and AI-driven voice assistants. Demonstrated practical experience through a Python Developer Internship and multiple hands-on projects. Eager to leverage technical skills in Python, Java, and Android development in a dynamic software engineering or technical administrative role.
+      </p>
 
+      <!-- EDUCATION -->
+      <h3 class="section-title">Education</h3>
+      <table class="edu-table">
+        <thead>
+          <tr>
+            <th>Degree / Examination</th>
+            <th>Institution / Board</th>
+            <th>Completion</th>
+            <th>Score / Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BCA</strong> (NEP Syllabus)</td>
+            <td>HARSHA INSTITUTE OF MANAGEMENT STUDIES | Bangalore University</td>
+            <td>Aug 2026</td>
+            <td>7.26 CGPA (First Class)</td>
+          </tr>
+          <tr>
+            <td><strong>12th (PUC)</strong> CEBA (Computer Science)</td>
+            <td>Karnataka State Board (KSEAB), Bangalore</td>
+            <td>May 2023</td>
+            <td>Passed</td>
+          </tr>
+          <tr>
+            <td><strong>10th (SSLC)</strong></td>
+            <td>CBSE Board, Lucknow</td>
+            <td>Aug 2021</td>
+            <td>Passed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- EXPERIENCE -->
+      <h3 class="section-title">Experience</h3>
+      <div class="entry-header">
+        <span>Python Developer Intern</span>
+        <span class="entry-date">Apr 2026 - May 2026</span>
       </div>
+      <div class="entry-subtitle">Codec Technologies (Stock Market Data Analysis) | Remote / India</div>
+      <ul class="bullet-list">
+        <li>Completed an intensive online internship program focused on Python development, strengthening programming fundamentals and practical application.</li>
+        <li>Leveraged Python to analyze, clean, and process large sets of complex stock market data for trend forecasting.</li>
+        <li>Engineered Python scripts and modular code structures to support core software development workflows, increasing operational efficiency.</li>
+      </ul>
+
+      <!-- SOFT SKILLS -->
+      <h3 class="section-title">Soft Skills</h3>
+      <div class="skills-wrapper">
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Teamwork</span>
+        <span class="skill-tag">Fast Learner</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Leadership</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Critical Thinking</span>
+      </div>
+
+      <!-- TECH SKILLS -->
+      <h3 class="section-title">Tech Skills</h3>
+      
+      <div class="category-label">Languages</div>
+      <div class="skills-wrapper">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">XML</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">C++</span>
+      </div>
+
+      <div class="category-label">Web Technologies</div>
+      <div class="skills-wrapper">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">Responsive Design</span>
+      </div>
+
+      <div class="page-indicator">S Jaya Kumar - Page 1 of 2</div>
     </div>
-    <div class="page-footer">S JAYA KUMAR • PROFESSIONAL RESUME • PAGE 1</div>
   </div>
 
 
   <!-- =========================================
        PAGE 2
   ========================================= -->
-  <div class="resume-a4">
-    <div class="page-header"></div>
-    <div class="content-wrapper">
+  <div class="resume-a4" style="margin-top: 30px;">
+    <div class="page-border">
       
-      <!-- PAGE 2 SIDEBAR -->
-      <div class="sidebar">
-        
-        <div class="section">
-          <h3 class="section-header">Tech Skills</h3>
-          
-          <div class="skills-category">Languages</div>
-          <div class="skill-tags">
-            <span class="tag">Java</span>
-            <span class="tag">XML</span>
-            <span class="tag">Python</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">PHP</span>
-            <span class="tag">C++</span>
-          </div>
+      <h3 class="section-title" style="margin-top: 0;">Tech Skills (Continued)</h3>
 
-          <div class="skills-category">Web Technologies</div>
-          <div class="skill-tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">Responsive Design</span>
-          </div>
-
-          <div class="skills-category">Databases</div>
-          <div class="skill-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">SQL</span>
-          </div>
-
-          <div class="skills-category">Core Concepts</div>
-          <ul class="concept-list">
-            <li>Object-Oriented Programming (OOP)</li>
-            <li>System Architecture & App Logic</li>
-            <li>Data Structures & Algorithms</li>
-            <li>API Integration & RESTful Services</li>
-            <li>Application Security Protocols</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3 class="section-header">Languages</h3>
-          <div class="skill-tags">
-            <span class="tag">English</span>
-            <span class="tag">Kannada</span>
-            <span class="tag">Hindi</span>
-          </div>
-        </div>
+      <div class="category-label">Databases</div>
+      <div class="skills-wrapper">
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">SQL</span>
       </div>
 
-      <!-- PAGE 2 MAIN CONTENT -->
-      <div class="main-content">
-        <div>
-          <h3 class="section-header">Projects</h3>
-          
-          <div class="project-card">
-            <div class="timeline-header">
-              <span class="timeline-title">Raksha-Suraksha</span>
-              <span class="timeline-date">2026</span>
-            </div>
-            <div class="timeline-subtitle">Personal Security & SOS Ecosystem</div>
-            <ul class="bullet-list">
-              <li><strong>Architecture:</strong> Designed a robust mobile security application focused on device anti-theft and personal safety protocols.</li>
-              <li><strong>Web Portal:</strong> Built a responsive companion dashboard using HTML, CSS, JavaScript, and PHP for secure app distribution.</li>
-              <li><strong>Core Logic:</strong> Engineered critical safety features, including an automated inactivity SOS trigger for emergency response.</li>
-            </ul>
-          </div>
-
-          <div class="project-card" style="margin-bottom: 0;">
-            <div class="timeline-header">
-              <span class="timeline-title">Versatile Application Development</span>
-              <span class="timeline-date">2025 - 2026</span>
-            </div>
-            <div class="timeline-subtitle">Java, XML, APIs, and AI Integration</div>
-            <ul class="mini-projects">
-              <li><strong>Jarvis Voice Assistant:</strong> Developed a character-themed, voice-automated AI chat system integrating real-time scanning functionalities.</li>
-              <li><strong>Weather Forecasting App:</strong> Built a dynamic application utilizing RESTful APIs to parse and display real-time meteorological data.</li>
-              <li><strong>Web-to-App Bridge:</strong> Engineered a cross-platform control system allowing seamless management of mobile functions via a web interface.</li>
-              <li><strong>Accessibility Integration:</strong> Designed a specialized mobile app feature allowing intuitive device navigation through custom hand-tap gestures.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="category-label">Core Concepts</div>
+      <div class="skills-wrapper">
+        <span class="skill-tag">Object-Oriented Programming (OOP)</span>
+        <span class="skill-tag">System Architecture & App Logic</span>
+        <span class="skill-tag">Data Structures & Algorithms</span>
+        <span class="skill-tag">API Integration & RESTful Services</span>
+        <span class="skill-tag">Application Security Protocols</span>
       </div>
+
+      <h3 class="section-title" style="margin-top: 15px;">Languages</h3>
+      <div class="skills-wrapper">
+        <span class="skill-tag">English</span>
+        <span class="skill-tag">Kannada</span>
+        <span class="skill-tag">Hindi</span>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 15px;">Key Projects</h3>
+      
+      <div class="entry-header">
+        <span>Raksha-Suraksha</span>
+        <span class="entry-date">2026</span>
+      </div>
+      <div class="entry-subtitle">Android Personal Security & SOS Ecosystem</div>
+      <ul class="bullet-list">
+        <li><strong>Architecture:</strong> Designed a robust mobile security application focused on device anti-theft and personal safety protocols.</li>
+        <li><strong>Web Portal:</strong> Built a responsive companion dashboard using HTML, CSS, JavaScript, and PHP for secure app distribution.</li>
+        <li><strong>Core Logic:</strong> Engineered critical safety features, including an automated inactivity SOS trigger for emergency response.</li>
+      </ul>
+
+      <div class="entry-header">
+        <span>Versatile Application Development</span>
+        <span class="entry-date">2025 - 2026</span>
+      </div>
+      <div class="entry-subtitle">Java, XML, APIs, and AI Integration</div>
+      <ul class="bullet-list">
+        <li><strong>Jarvis Voice Assistant:</strong> Developed a character-themed, voice-automated AI chat system integrating real-time scanning functionalities.</li>
+        <li><strong>Weather Forecasting App:</strong> Built a dynamic application utilizing RESTful APIs to parse and display real-time meteorological data.</li>
+        <li><strong>Web-to-App Bridge:</strong> Engineered a cross-platform control system allowing seamless management of mobile functions via a web interface.</li>
+        <li><strong>Accessibility Integration:</strong> Designed a specialized mobile app feature allowing intuitive device navigation through custom hand-tap gestures.</li>
+      </ul>
+
+      <div class="page-indicator">S Jaya Kumar - Page 2 of 2</div>
     </div>
-    <div class="page-footer">S JAYA KUMAR • PROFESSIONAL RESUME • PAGE 2</div>
   </div>
 
 </body>
